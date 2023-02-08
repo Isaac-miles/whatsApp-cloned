@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{ 
+
+  .headerLink {
+    @apply cursor-pointer mx-5 mt-3  text-[#ffffff] font-bold text-xl  
+  }
+  .uLink{
+    @apply inline-block hover:bg-[#69c270] h-10 
+  }
+}
