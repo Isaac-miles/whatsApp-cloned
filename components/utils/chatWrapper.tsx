@@ -79,7 +79,7 @@ const ChatWrapper:FC<PropsWithChildren> =()=> {
 
     ))
   return (
-    <section className='relative top-28 w-full  border-x overflow-y-scroll  scroll-smooth '>
+    <section className='relative top-28 w-full border-x overflow-y-auto  scroll-smooth '>
       {activeChat}
     </section>
   )

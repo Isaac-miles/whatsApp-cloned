@@ -18,7 +18,7 @@ const blurTxf =() =>{
 
   return (
     <Fragment>
-      <section className='w-1/3 min-h-screen float-left mt-10'>
+      <section className='w-1/3  float-left mt-10 overflow-clip'>
         
        <div  className='fixed z-10 w-1/3  '>
         {/* profile section */}
@@ -35,8 +35,8 @@ const blurTxf =() =>{
 
         {/* search section */}
         <div className= 'flex items-center justify-between bg-[#ffffff]  w-full border'> 
-          <div className='max-h-14 '>
-         <input type="search" onFocus={focusTxf} onBlur={blurTxf} placeholder='Search or start new chat' className='w-96 p-2 m-2 bg-[#f0eeee] rounded-md pl-14' />
+          <div className='max-h-14 w-full m-auto'>
+         <input type="search" onFocus={focusTxf} onBlur={blurTxf} placeholder='Search or start new chat' className='w-[95%] p-2 m-2 bg-[#f0eeee] rounded-md pl-14' />
         { !txF && <AiOutlineSearch className='relative -top-11 left-3  text-3xl  text-[#978f8f]'/>}
          { txF && <VscArrowLeft className='relative -top-11 left-3 text-3xl  text-[#075e54]'/>}
          </div>
