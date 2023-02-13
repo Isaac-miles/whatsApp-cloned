@@ -7,7 +7,7 @@ import { BsMic } from "react-icons/bs";
 function Footer() {
 
   return (
-      <footer className='w-2/3 h-14 float-left border-x mt-10 items-center justify-between bg-green-600'>
+      <footer className='w-full h-14 float-left border-x  items-center justify-between'>
         
 
        <div className= 'flex items-center justify-between bg-[#f0eeee] h-14 p-2 ' > 

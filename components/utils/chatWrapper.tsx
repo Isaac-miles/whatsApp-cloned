@@ -5,16 +5,16 @@ const ChatWrapper:FC<PropsWithChildren> =()=> {
   const chats = [
   {
   id:1,
-  message: 'hello Miles',
+  message: 'hello dad ⚽',
   img: '/img2.jpg',
-  name: 'Omokafe',
+  name: 'Josiah🤍',
   timeAndDate:  new Date().getUTCFullYear().toLocaleString()
       },
   {
   id:2,
-  message: 'yes o I got called into bar today',
-  img: '/img2.jpg',
-  name: 'David',
+  message: 'I de owe Bill gate',
+  img: '/img3.png',
+  name: 'Elon Musk',
   timeAndDate: new Date().getUTCFullYear().toLocaleString()
       },
   {
@@ -26,9 +26,9 @@ const ChatWrapper:FC<PropsWithChildren> =()=> {
       },
   {
   id:4,
-  message: 'my phone is faulty at the moment',
+  message: 'I de Kuje Prison, na camera lense land me here...',
   img: '/img4.png',
-  name: 'Isaac',
+  name: 'Mathew',
   timeAndDate: new Date().getUTCFullYear().toLocaleString()
       },
   {
@@ -40,14 +40,14 @@ const ChatWrapper:FC<PropsWithChildren> =()=> {
       },
   {
   id:6,
-  message: 'wahala no too much ',
+  message: 'wahala be like church projects ',
   img: '/img3.png',
-  name: 'Milo',
+  name: 'omotunde',
   timeAndDate: new Date().getUTCFullYear().toLocaleString()
       },
   {
   id:7,
-  message: 'wahala no too much ',
+  message: 'Heard you getting married ',
   img: '/img2.jpg',
   name: 'Helen',
   timeAndDate: new Date().getUTCFullYear().toLocaleString()

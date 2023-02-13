@@ -18,7 +18,7 @@ const blurTxf =() =>{
 
   return (
     <Fragment>
-      <section className='w-1/3  float-left mt-10 overflow-clip'>
+      <section className='w-1/3  float-left mt-10 '>
         
        <div  className='fixed z-10 w-1/3  '>
         {/* profile section */}
@@ -47,8 +47,6 @@ const blurTxf =() =>{
         <ChatWrapper/>
 
       </section>
-     
-
      
     </Fragment>
   )
