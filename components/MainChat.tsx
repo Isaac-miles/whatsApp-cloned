@@ -1,6 +1,6 @@
 import {Fragment} from 'react'
 import Footer from './Footer'
-import BodyHeader from './utils/BodyHeader'
+import BodyHeader from './utils/bodyHeader'
 import Chats from './utils/chats'
 import MainChatWrapper from './utils/mainChatWrapper'
 

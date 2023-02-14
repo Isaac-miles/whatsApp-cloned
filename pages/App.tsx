@@ -1,14 +1,14 @@
-import {Fragment}from 'react'
+import ChatContextProvider from '../store/chat-context'
 import Header from '../components/Header'
 import MainChat from '../components/MainChat'
 import Sidebar from '../components/Sidebar'
 
 export default function App() {
   return (
-    <Fragment>
+    <ChatContextProvider>
      <Header/>
       <Sidebar/> 
        <MainChat/> 
-    </Fragment>
+    </ChatContextProvider>
   )
 }

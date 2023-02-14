@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {Fragment, useState} from 'react'
+import {Fragment, useState, useContext} from 'react'
 import { VscAdd,VscEllipsis,VscListFilter,VscArrowLeft} from 'react-icons/vsc';
 import { TbCircleDotted } from "react-icons/tb";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -7,7 +7,6 @@ import ChatWrapper from './utils/chatWrapper';
 
 
 function Sidebar() {
-
 const [txF, setTxF] = useState<boolean>(false)
 const focusTxf =() =>{
  setTxF(true) 
@@ -18,7 +17,7 @@ const blurTxf =() =>{
 
   return (
     <Fragment>
-      <section className='w-1/3  float-left mt-10 '>
+      <section className='w-1/3  float-left mt-10 overflow-y-scroll'>
         
        <div  className='fixed z-10 w-1/3  '>
         {/* profile section */}

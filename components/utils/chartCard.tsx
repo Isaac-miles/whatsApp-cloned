@@ -1,17 +1,21 @@
+import React, {useContext} from 'react'
+import { ChatContext } from '../../store/chat-context';
 import Image from 'next/image'
 import {useState} from 'react'
 import {VscChevronDown} from 'react-icons/vsc';
 
 
 interface details{
+  id:number
   img:string,
   name: string,
   dateAndTime: string,
   message: string,
-
 }
  function ChartCard(props: details) {
   const [hoverOver, setHover] = useState<boolean>(false)
+  const chatCtx = useContext(ChatContext);
+
   const hoverEnter =()=>{setHover(true)}
   const hoverLeave =()=>{setHover(false)}
 
