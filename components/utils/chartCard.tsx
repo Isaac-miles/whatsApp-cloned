@@ -11,6 +11,7 @@ interface details{
   name: string,
   dateAndTime: string,
   message: string,
+  clicked:()=>void
 }
  function ChartCard(props: details) {
   const [hoverOver, setHover] = useState<boolean>(false)
@@ -20,7 +21,7 @@ interface details{
   const hoverLeave =()=>{setHover(false)}
 
   return (
-    <div className='relative flex items-center h-20  m-0 border-y hover:bg-[#f0eeee]' onMouseEnter={hoverEnter} onMouseLeave={hoverLeave}>
+    <div className='relative flex items-center h-20  m-0 border-y hover:bg-[#f0eeee]'  onMouseEnter={hoverEnter} onMouseLeave={hoverLeave} onClick={props.clicked}>
       <div className ='flex-none w-16 h-20 ml-1 py-4'>
         <div className='items-center w-full justify-center '>
         <Image src={props.img} alt='profile pic' height={49} width={49} className='rounded-full'/>
@@ -34,12 +35,12 @@ interface details{
               <div className=' w-1/5 text-lg text-center'>{props.dateAndTime}</div>
             </div>
 
-            <div className='flex justify-between h-10  w-full'>
+            <div className='flex justify-between h-10  w-full cursor-pointer'>
               <div className=' w-4/5'>{props.message}</div>
               <div className='text-end w-1/5 text-lg'></div>
               { hoverOver && <VscChevronDown className='text-2xl'/>}
            
-        </div>
+           </div>
            
           </div>
       </div>

@@ -17,7 +17,7 @@ const blurTxf =() =>{
 
   return (
     <Fragment>
-      <section className='w-1/3  float-left mt-10 overflow-y-scroll'>
+      <section className='w-1/3 max-h-screen float-left mt-10 overflow-hidden'>
         
        <div  className='fixed z-10 w-1/3  '>
         {/* profile section */}

@@ -1,86 +1,99 @@
-import { TimeLike } from 'fs'
+import { format, compareAsc } from 'date-fns'
 import {createContext, FC, PropsWithChildren, useState} from 'react'
+import { VscVmActive } from 'react-icons/vsc'
 
+
+
+
+const timeFormat = format(new Date(), 'MM/dd/yyyy')
 
 const chats = [
   {
   id:1,
-  message: 'hello dad ⚽',
+  message: 'hello  ⚽',
   img: '/img2.jpg',
   name: 'Josiah🤍',
-  timeAndDate:  new Date().getUTCFullYear().toLocaleString()
+  timeAndDate: timeFormat.toString()
       },
   {
   id:2,
   message: 'I de owe Bill gate',
   img: '/img3.png',
   name: 'Elon Musk',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  timeAndDate:timeFormat.toString()
       },
   {
   id:3,
-  message: 'not so true ooo hhahahah',
+  message: 'My introduction is next week',
   img: '/img4.png',
-  name: 'Junior',
-  timeAndDate:  new Date().getUTCFullYear().toLocaleString()
+  name: 'Pelumi',
+  timeAndDate: timeFormat.toString()
       },
   {
   id:4,
-  message: 'I de Kuje Prison, na camera lense land me here...',
+  message: 'Abeg send me 2k😭😭...',
   img: '/img4.png',
-  name: 'Mathew',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  name: 'Cross',
+  timeAndDate:timeFormat.toString()
       },
   {
   id:5,
   message: 'wahala no too much ',
   img: '/img2.jpg',
   name: 'Miles',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  timeAndDate:timeFormat.toString()
       },
   {
   id:6,
   message: 'wahala be like church projects ',
   img: '/img3.png',
   name: 'omotunde',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  timeAndDate:timeFormat.toString()
       },
   {
   id:7,
   message: 'Heard you getting married ',
   img: '/img2.jpg',
   name: 'Helen',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  timeAndDate:timeFormat.toString()
       },
   {
   id:8,
   message: 'wahala no too much ',
   img: '/img4.png',
   name: 'Mathew',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  timeAndDate:timeFormat.toString()
       },
   {
   id:9,
   message: 'wahala no too much ',
   img: '/img3.png',
   name: 'John',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  timeAndDate: timeFormat.toString()
       },
   {
   id:10,
   message: 'wahala no too much ',
   img: '/img2.jpg',
-  name: 'John',
-  timeAndDate: new Date().getUTCFullYear().toLocaleString()
+  name: 'durela',
+  timeAndDate: timeFormat.toString()
+      },
+  {
+  id:11,
+  message: 'wahala no too much ',
+  img: '/img2.jpg',
+  name: 'Joha',
+  timeAndDate: timeFormat.toString()
+      },
+  {
+  id:12,
+  message: 'wahala no too much ',
+  img: '/img2.jpg',
+  name: 'ken',
+  timeAndDate: timeFormat.toString()
       }
     ]
-    // {
-    //   id:1,
-    //   message: 'hello dad ⚽',
-    //   img: '/img2.jpg',
-    //   name: 'Josiah🤍',
-    //   timeAndDate:  new Date().getUTCFullYear().toLocaleString()
-    //       }
+
 type Chat = {
   id: number,
   name: string,
@@ -88,30 +101,47 @@ type Chat = {
   message: string,
   timeAndDate: string,
 }[]
+type activeChat = {
+  id: number,
+  name: string,
+  img: string,
+  message: string,
+  timeAndDate: string,
+}
 
  interface chatContextType {
   chats:Chat,
-  addChat: (id:number)=>any,
-  delChat: (id:number)=>any
+  activeChat:activeChat,
+  addChat: (id:number)=>void,
+  delChat: (id:number)=>void
 
 }
 
 
  export const ChatContext = createContext<chatContextType>({
   chats:[],
+  activeChat: {} as activeChat,
   addChat: ()=>{},
   delChat: ()=>{}
  })
 
  const ChatContextProvider: FC<PropsWithChildren> = (props) =>{
-  const [chat, setChats] =  useState<Chat>([]);
-  chats.map(ch=>chat.push(ch))
+  const [chat, setChats] =  useState<Chat>(chats);
+  const [activeChat, setActiveChat] =  useState<activeChat>({} as activeChat);
+ 
+  const addChat = (id:number): void =>{
+    // find the specified chat
+    const activeChat = chat.find((chat)=>chat.id === id)
+    if(activeChat)setActiveChat(activeChat)
+    
+    // console.log(id,  activeChat);
 
-  const addChat = (id:number)=>{}
+  }
   const delChat = (id:number)=>{}
 
   const value ={
     chats: chat,
+    activeChat,
     addChat,
     delChat
   };

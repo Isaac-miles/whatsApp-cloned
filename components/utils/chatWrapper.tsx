@@ -7,13 +7,13 @@ import ChartCard from './chartCard'
 const ChatWrapper:FC<PropsWithChildren> =()=> {
     const chatCtx = useContext(ChatContext);
 
-    const activeChat = chatCtx.chats.map((chat)=>(
-       <ChartCard key={chat.id} name={chat.name} message={chat.message} img={chat.img} dateAndTime ={chat.timeAndDate} id={chat.id} />
+    const CurrentChat = chatCtx.chats.map((chat)=>(
+       <ChartCard key={chat.id} name={chat.name} message={chat.message} img={chat.img} dateAndTime ={chat.timeAndDate} id={chat.id} clicked={chatCtx.addChat.bind(null, chat.id)}/>
 
     ))
   return (
-    <section className='relative top-28 w-full border-x overflow-y-auto  scroll-smooth '>
-      {activeChat}
+    <section className='relative top-40 w-full h-screen border-x overflow-y-auto  scroll-smooth '>
+      {CurrentChat}
     </section>
   )
 }

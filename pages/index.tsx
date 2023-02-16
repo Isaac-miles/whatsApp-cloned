@@ -6,7 +6,7 @@ import App from './App'
 
 const Home: NextPage = () => {
   return (
-    <div className="min-w-full max-h-screen">
+    <div className="min-w-full max-h-screen ">
       <Head>
         <title>whatsUp</title>
         <link rel="icon" href="/favicon.ico" />
