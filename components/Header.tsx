@@ -7,7 +7,7 @@ import { VscChromeMaximize,VscChromeClose,VscChromeMinimize} from 'react-icons/v
  function Header() {
   return (
 
-    <header className='fixed h-10 top-0 z-30 p-0 flex w-full items-center justify-between bg-[#075e54] '>
+    <header className='sticky h-10  p-0 flex w-full items-center justify-between bg-[#075e54] '>
       <div className='flex -mx-20 justify-center md:w-1/5'>
      
       <div className ='relative h-10'>

@@ -12,7 +12,7 @@ const ChatWrapper:FC<PropsWithChildren> =()=> {
 
     ))
   return (
-    <section className='relative top-40 w-full h-screen border-x overflow-y-auto  scroll-smooth '>
+    <section className='relative  w-full h-screen border-x  overflow-y-auto pt-28 pb-10'>
       {CurrentChat}
     </section>
   )
