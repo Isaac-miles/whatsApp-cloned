@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { ChatContext } from '../../store/chat-context';
+import MenuCard from './subMenuCard';
 import Image from 'next/image'
 import {useState} from 'react'
 import {VscChevronDown} from 'react-icons/vsc';
@@ -13,12 +14,21 @@ interface details{
   message: string,
   clicked:()=>void
 }
+
  function ChartCard(props: details) {
-  const [hoverOver, setHover] = useState<boolean>(false)
-  const chatCtx = useContext(ChatContext);
+  const cardMen = ['Archive chat', 'Mute notification', 'Delete chat', 'Unpin chat', 'Mark as unread']
+   const [hoverOver, setHover] = useState<boolean>(false)
+   const [menuCard, setMenuCard] = useState<boolean>(false)
+   const chatCtx = useContext(ChatContext);
 
   const hoverEnter =()=>{setHover(true)}
   const hoverLeave =()=>{setHover(false)}
+  const hoverMenu =()=>{
+    console.log(menuCard);
+    setMenuCard(true)
+    console.log('after' , menuCard);
+
+  }
 
   return (
     <div className='relative flex items-center h-20  m-0 border-y hover:bg-[#f0eeee]'  onMouseEnter={hoverEnter} onMouseLeave={hoverLeave} onClick={props.clicked}>
@@ -38,12 +48,15 @@ interface details{
             <div className='flex justify-between h-10  w-full cursor-pointer'>
               <div className=' w-4/5'>{props.message}</div>
               <div className='text-end w-1/5 text-lg'></div>
-              { hoverOver && <VscChevronDown className='text-2xl'/>}
+              { hoverOver && <VscChevronDown className='text-2xl bg-red-800 ' onClickCapture={hoverMenu}/>}
            
            </div>
-           
+         {/* { menuCard && <MenuCard />} */}
+         {/* <MenuCard cardMen={cardMen} /> */}
           </div>
+
       </div>
+
     
  
   )

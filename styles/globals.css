@@ -14,4 +14,14 @@
   .uLink{
     @apply inline-block hover:bg-[#69c270] h-10 
   }
+  .card {
+    position:  absolute ;
+    top: 28px;
+    right:10px;
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.lg');
+    padding-top: theme('spacing.4');
+    padding-bottom: theme('spacing.4');
+    box-shadow: theme('boxShadow.xl');
+  }
 }
