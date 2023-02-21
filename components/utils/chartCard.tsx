@@ -11,7 +11,10 @@ interface details{
   img:string,
   name: string,
   dateAndTime: string,
-  message: string,
+  message:{
+    messageIn: string[],
+    messageOut: string[]
+  },
   clicked:()=>void
 }
 
@@ -23,11 +26,15 @@ interface details{
 
   const hoverEnter =()=>{setHover(true)}
   const hoverLeave =()=>{setHover(false)}
+  const messageIn = props.message.messageIn
+  const messageOut = props.message.messageOut
+  const combinedMessage = messageIn.concat(messageOut)
+
   const hoverMenu =()=>{
     console.log(menuCard);
     setMenuCard(true)
-    console.log('after' , menuCard);
 
+    
   }
 
   return (
@@ -46,13 +53,13 @@ interface details{
             </div>
 
             <div className='flex justify-between h-10  w-full cursor-pointer'>
-              <div className=' w-4/5'>{props.message}</div>
+              <div className=' w-4/5'>{combinedMessage[combinedMessage.length - 1 ]}</div>
               <div className='text-end w-1/5 text-lg'></div>
               { hoverOver && <VscChevronDown className='text-2xl bg-red-800 ' onClickCapture={hoverMenu}/>}
            
            </div>
-         {/* { menuCard && <MenuCard />} */}
-         {/* <MenuCard cardMen={cardMen} /> */}
+         { menuCard && <MenuCard />}
+        
           </div>
 
       </div>
