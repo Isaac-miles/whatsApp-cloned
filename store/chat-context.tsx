@@ -25,7 +25,7 @@ const chats = [
     messageOut:['I de owe Bill gate', 'na why I never show up since ']
   },
   img: '/img3.png',
-  name: 'Elon Musk',
+  name: 'Elon Not Musk',
   timeAndDate:timeFormat.toString()
       },
   {
@@ -244,22 +244,39 @@ type activeChat = {
  interface chatContextType {
   chats:Chat,
   activeChat:activeChat,
-  addChat: (id:number)=>void,
+  menuCard:boolean
+  addChat: (id:number)=>void
   delChat: (id:number)=>void
+  hoverMenuOpen:(id:number)=>void
+  hoverMenuClose: (id:number)=>void
 
 }
 
 
  export const ChatContext = createContext<chatContextType>({
   chats:[],
+  menuCard:false,
   activeChat: {} as activeChat,
   addChat: ()=>{},
-  delChat: ()=>{}
+  delChat: ()=>{},
+  hoverMenuOpen: ()=>{},
+  hoverMenuClose: ()=>{},
  })
 
  const ChatContextProvider: FC<PropsWithChildren> = (props) =>{
   const [chat, setChats] =  useState<Chat>(chats);
   const [activeChat, setActiveChat] =  useState<activeChat>({} as activeChat);
+  const [menuCard, setMenuCard] = useState<boolean>(false)
+  
+  const hoverMenuOpen =(id:number)=>{
+    setMenuCard(true)
+    console.log(menuCard);
+    
+    }
+ 
+  const hoverMenuClose =(id:number)=>{
+    setMenuCard(false)
+    }
  
   const addChat = (id:number): void =>{
     // find the specified chat
@@ -275,7 +292,10 @@ type activeChat = {
     chats: chat,
     activeChat,
     addChat,
-    delChat
+    delChat,
+    menuCard,
+    hoverMenuOpen,
+    hoverMenuClose
   };
 
   return (

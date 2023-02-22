@@ -1,25 +1,14 @@
-import React, { FC, PropsWithChildren, useContext} from 'react'
+import React, { FC, PropsWithChildren} from 'react'
 
-type cardMen = string[]
-
-const MenuCard:FC<PropsWithChildren> =(props, cardMenus:cardMen)=> {
-   
+const MenuCard:FC<PropsWithChildren <{cardMen:string[]}>> =(props)=> {
+  
   return (
-    <div className='card w-[217px]'>
+    <div className='card w-[217px] z-20'>
       <div>
       <ul>
-        <li className='hover:bg-[#f0eeee] p-2' >
-          <div>Home</div>
-        </li>
-        <li className='hover:bg-[#f0eeee] p-2'>
-          <div>Home</div>
-        </li>
-        <li className='hover:bg-[#f0eeee] p-2'>
-          <div>Home</div>
-        </li>
-        {/* <li>Clear</li>
-        <li>Delete</li>
-        <li>Profile</li> */}
+       {props.cardMen.map((menu)=> (<li key={menu} className='hover:bg-[#f0eeee] p-2' >
+          <div>{menu}</div>
+        </li>))}
       </ul>
       </div>
       

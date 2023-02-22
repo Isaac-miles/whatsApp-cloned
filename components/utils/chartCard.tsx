@@ -21,7 +21,6 @@ interface details{
  function ChartCard(props: details) {
   const cardMen = ['Archive chat', 'Mute notification', 'Delete chat', 'Unpin chat', 'Mark as unread']
    const [hoverOver, setHover] = useState<boolean>(false)
-   const [menuCard, setMenuCard] = useState<boolean>(false)
    const chatCtx = useContext(ChatContext);
 
   const hoverEnter =()=>{setHover(true)}
@@ -30,12 +29,11 @@ interface details{
   const messageOut = props.message.messageOut
   const combinedMessage = messageIn.concat(messageOut)
 
+ 
   const hoverMenu =()=>{
-    console.log(menuCard);
-    setMenuCard(true)
 
-    
   }
+
 
   return (
     <div className='relative flex items-center h-20  m-0 border-y hover:bg-[#f0eeee]'  onMouseEnter={hoverEnter} onMouseLeave={hoverLeave} onClick={props.clicked}>
@@ -55,10 +53,10 @@ interface details{
             <div className='flex justify-between h-10  w-full cursor-pointer'>
               <div className=' w-4/5'>{combinedMessage[combinedMessage.length - 1 ]}</div>
               <div className='text-end w-1/5 text-lg'></div>
-              { hoverOver && <VscChevronDown className='text-2xl bg-red-800 ' onClickCapture={hoverMenu}/>}
+              { hoverOver && <VscChevronDown className='text-2xl ' onClickCapture={hoverMenu}/>}
            
            </div>
-         { menuCard && <MenuCard />}
+         { chatCtx.menuCard && <MenuCard cardMen={cardMen} />}
         
           </div>
 
