@@ -47,16 +47,17 @@ interface details{
 
             <div className='flex justify-between h-10 w-full '>
               <div className=' w-4/5 text-xl pt-1'>{props.name}</div>
-              <div className=' w-1/5 text-lg text-center'>{props.dateAndTime}</div>
+              <div className=' w-1/5 text-sm text-center'>{props.dateAndTime}</div>
             </div>
 
             <div className='flex justify-between h-10  w-full cursor-pointer'>
               <div className=' w-4/5'>{combinedMessage[combinedMessage.length - 1 ]}</div>
               <div className='text-end w-1/5 text-lg'></div>
-              { hoverOver && <VscChevronDown className='text-2xl ' onClickCapture={hoverMenu}/>}
+              { hoverOver && <VscChevronDown className='text-2xl ' onClickCapture={chatCtx.hoverMenuOpen.bind(null, props.id)}/>}
            
            </div>
          { chatCtx.menuCard && <MenuCard cardMen={cardMen} />}
+   
         
           </div>
 

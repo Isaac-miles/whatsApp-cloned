@@ -34,7 +34,7 @@ import { ChatContext } from "../../store/chat-context"
           </div>
   
         </div>))}
-       {messageOut.map((message)=>(<div key={message} id="messageOut" className=" w-[95%]  mx-5 mt-2 p-2  float-right ">
+       {messageOut.map((message)=>(<div key={message} id="messageOut" className=" w-[95%]  mx-5 mt-1 p-2  float-right ">
           <div className="max-w-[60%] float-right  bg-white rounded-md p-1">
             <span className="inline-block">{message}</span>
             <span className="relative top-2 text-sm m-2">{ctx.activeChat.timeAndDate}</span>

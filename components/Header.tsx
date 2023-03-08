@@ -12,7 +12,7 @@ import { VscChromeMaximize,VscChromeClose,VscChromeMinimize} from 'react-icons/v
      
       <div className ='relative h-10'>
       {/* <Image src="https://rb.gy/vsvv2o" alt='' width={50} height= {50}/> */}
-      <h1 className='text-white text-center p-1'>whatsUp</h1>
+      <h1 className='text-white text-center p-1'>HeadsUp</h1>
 
       </div>
 

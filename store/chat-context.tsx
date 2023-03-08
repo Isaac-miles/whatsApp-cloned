@@ -4,15 +4,15 @@ import { VscVmActive } from 'react-icons/vsc'
 
 
 
-
+const {log} = console
 const timeFormat = format(new Date(), 'MM/dd/yyyy')
 
 const chats = [
   {
   id:1,
   message:{
-    messageIn:['Hello Dad', 'I am home'],
-    messageOut:['Yes my Lovely Son']
+    messageIn:['Hello Sir', 'I Did this with NextJs Typescript'],
+    messageOut:['This looks good']
   },
   img: '/img2.jpg',
   name: 'Josiah🤍',
@@ -25,14 +25,14 @@ const chats = [
     messageOut:['I de owe Bill gate', 'na why I never show up since ']
   },
   img: '/img3.png',
-  name: 'Elon Not Musk',
+  name: 'Isaac not Newton',
   timeAndDate:timeFormat.toString()
       },
   {
   id:3,
   message:{
     messageIn:['Hi'],
-    messageOut:['My introduction is next week']
+    messageOut:['doing Just great']
   },
   img: '/img4.png',
   name: 'Pelumi',
@@ -41,8 +41,8 @@ const chats = [
   {
   id:4,
   message:{
-    messageIn:['Bro', 'howfa na'],
-    messageOut:['I de owe Bill gate']
+    messageIn:['sure I will', 'howfa na'],
+    messageOut:['Common man']
   },
   img: '/img4.png',
   name: 'Cross',
@@ -52,7 +52,7 @@ const chats = [
   id:5,
   message:{
     messageIn:['Bro', 'howfa na'],
-    messageOut:['I de owe Bill gate']
+    messageOut:['Not so fast']
   },
   img: '/img2.jpg',
   name: 'Miles',
@@ -62,7 +62,7 @@ const chats = [
   id:6,
   message:{
     messageIn:['Bro', 'howfa na'],
-    messageOut:['I de owe Bill gate']
+    messageOut:['will be on my best behavior']
   },
   img: '/img3.png',
   name: 'omolola',
@@ -72,7 +72,7 @@ const chats = [
   id:7,
   message:{
     messageIn:['Bro', 'howfa na'],
-    messageOut:['I de owe Bill gate']
+    messageOut:['how you doing']
   },
   img: '/img2.jpg',
   name: 'Helen',
@@ -82,7 +82,7 @@ const chats = [
   id:8,
   message:{
     messageIn:['Bro', 'howfa na'],
-    messageOut:['I de owe Bill gate']
+    messageOut:['whats happening at home']
   },
   img: '/img4.png',
   name: 'Mathew',
@@ -92,7 +92,7 @@ const chats = [
   id:9,
   message:{
     messageIn:['Bro', 'howfa na'],
-    messageOut:['I de owe Bill gate']
+    messageOut:['not so fast bro']
   },
   img: '/img3.png',
   name: 'John',
@@ -268,10 +268,16 @@ type activeChat = {
   const [activeChat, setActiveChat] =  useState<activeChat>({} as activeChat);
   const [menuCard, setMenuCard] = useState<boolean>(false)
   
-  const hoverMenuOpen =(id:number)=>{
-    setMenuCard(true)
+  const hoverMenuOpen =(id:number | string)=>{
+   
+      log(id);
+      //find the chat whose Id has been sent
+      const menuId = chat.find((c)=>c.id == id)
+      log(menuId);
+      if(menuId?.id === id )setMenuCard(true)
+      
+   
     console.log(menuCard);
-    
     }
  
   const hoverMenuClose =(id:number)=>{
